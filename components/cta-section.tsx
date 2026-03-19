@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 
 export default function CtaSection() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const inView = useInView(ref, { once: true })
 
   return (
     <section id="cta" className="relative py-32 px-6 overflow-hidden bg-cream">

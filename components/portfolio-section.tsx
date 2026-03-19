@@ -39,7 +39,7 @@ function GalleryItem({
   index: number
 }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
+  const inView = useInView(ref, { once: true })
 
   return (
     <motion.div
@@ -70,7 +70,7 @@ function GalleryItem({
 
 export default function PortfolioSection() {
   const titleRef = useRef(null)
-  const titleInView = useInView(titleRef, { once: true, margin: '-80px' })
+  const titleInView = useInView(titleRef, { once: true })
 
   return (
     <section id="portfolio" className="py-28 px-6 bg-cream">

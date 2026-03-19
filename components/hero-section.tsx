@@ -2,17 +2,15 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+// useScroll without a target reads window scroll — no position requirement
 import { ChevronDown } from 'lucide-react'
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  const { scrollY } = useScroll()
+  const bgY = useTransform(scrollY, [0, 600], ['0%', '30%'])
+  const textY = useTransform(scrollY, [0, 600], ['0%', '15%'])
+  const opacity = useTransform(scrollY, [0, 480], [1, 0])
 
   const handleScroll = () => {
     const el = document.querySelector('#services')

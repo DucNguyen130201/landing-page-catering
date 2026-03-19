@@ -12,9 +12,9 @@ const stats = [
 
 export default function AboutSection() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const inView = useInView(ref, { once: true })
   const statsRef = useRef(null)
-  const statsInView = useInView(statsRef, { once: true, margin: '-60px' })
+  const statsInView = useInView(statsRef, { once: true })
 
   return (
     <section id="about" className="py-28 px-6 bg-background overflow-hidden">

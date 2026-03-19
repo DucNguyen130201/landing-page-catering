@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
 
   const titleRef = useRef(null)
-  const titleInView = useInView(titleRef, { once: true, margin: '-80px' })
+  const titleInView = useInView(titleRef, { once: true })
 
   return (
     <section id="testimonials" className="py-28 px-6 bg-charcoal overflow-hidden">

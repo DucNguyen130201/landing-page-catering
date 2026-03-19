@@ -37,7 +37,7 @@ function ServiceCard({
   index: number
 }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const inView = useInView(ref, { once: true })
 
   return (
     <motion.article
@@ -81,7 +81,7 @@ function ServiceCard({
 
 export default function ServicesSection() {
   const titleRef = useRef(null)
-  const titleInView = useInView(titleRef, { once: true, margin: '-80px' })
+  const titleInView = useInView(titleRef, { once: true })
 
   return (
     <section id="services" className="py-28 px-6 bg-background">
