@@ -1,0 +1,122 @@
+'use client'
+
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+
+export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+
+  const handleScroll = () => {
+    const el = document.querySelector('#services')
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <section
+      ref={containerRef}
+      id="hero"
+      className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
+    >
+      {/* Parallax background */}
+      <motion.div
+        className="absolute inset-0 w-full h-[120%] -top-[10%]"
+        style={{ y: bgY }}
+      >
+        <img
+          src="/images/hero-bg.jpg"
+          alt="Luxury catering event"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-charcoal/55" />
+      </motion.div>
+
+      {/* Content */}
+      <motion.div
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        style={{ y: textY, opacity }}
+      >
+        <motion.p
+          className="text-gold text-sm tracking-[0.35em] uppercase font-sans font-medium mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Luxury Catering &amp; Event Experiences
+        </motion.p>
+
+        <motion.h1
+          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-light leading-tight text-balance mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.5 }}
+        >
+          Every Bite,{' '}
+          <span className="italic text-gold">A Memory</span>
+        </motion.h1>
+
+        <motion.p
+          className="text-white/75 text-lg md:text-xl font-sans font-light leading-relaxed max-w-2xl mx-auto mb-12 text-pretty"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          We transform your most cherished occasions into extraordinary culinary
+          journeys — crafted with passion, served with elegance.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <button
+            onClick={() => {
+              const el = document.querySelector('#cta')
+              if (el) el.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="px-10 py-4 bg-gold text-charcoal text-sm tracking-widest uppercase font-medium rounded-full hover:bg-gold-dark hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-gold/30 hover:scale-105"
+          >
+            Plan Your Event
+          </button>
+          <button
+            onClick={() => {
+              const el = document.querySelector('#portfolio')
+              if (el) el.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="px-10 py-4 border border-white/60 text-white text-sm tracking-widest uppercase font-medium rounded-full hover:border-gold hover:text-gold transition-all duration-300 cursor-pointer hover:scale-105"
+          >
+            View Our Work
+          </button>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        onClick={handleScroll}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60 hover:text-gold transition-colors cursor-pointer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        aria-label="Scroll down"
+      >
+        <span className="text-xs tracking-widest uppercase font-sans">Discover</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+        >
+          <ChevronDown size={20} />
+        </motion.div>
+      </motion.button>
+    </section>
+  )
+}
