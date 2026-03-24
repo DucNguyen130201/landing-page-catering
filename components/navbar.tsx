@@ -45,11 +45,11 @@ export default function Navbar() {
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            className={`font-serif text-2xl font-semibold tracking-widest uppercase transition-colors duration-300 ${
+            className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${
               scrolled ? 'text-foreground' : 'text-white'
             }`}
           >
-            The <span className="text-gold italic font-light">Caterers</span>
+            Corporate <span className="text-primary italic font-light">Meals</span>
           </a>
 
           {/* Desktop nav */}
@@ -67,9 +67,9 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => handleNavClick('#cta')}
-              className="ml-4 px-6 py-2.5 border text-sm tracking-widest uppercase font-medium transition-all duration-300 hover:bg-gold hover:border-gold hover:text-charcoal rounded-full cursor-pointer border-gold text-gold"
+              className="ml-4 px-6 py-2.5 border text-sm tracking-widest uppercase font-medium transition-all duration-300 hover:bg-primary hover:border-primary hover:text-blue-gray rounded-full cursor-pointer border-primary text-primary"
             >
-              Book Now
+              Get Quote
             </button>
           </nav>
 
@@ -98,7 +98,7 @@ export default function Navbar() {
               <motion.button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="font-serif text-3xl text-white/90 hover:text-gold transition-colors italic cursor-pointer"
+                className="font-serif text-3xl text-white/90 hover:text-primary transition-colors italic cursor-pointer"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.07 }}
@@ -108,7 +108,7 @@ export default function Navbar() {
             ))}
             <motion.button
               onClick={() => handleNavClick('#cta')}
-              className="mt-4 px-8 py-3 border border-gold text-gold text-sm tracking-widest uppercase rounded-full hover:bg-gold hover:text-charcoal transition-all cursor-pointer"
+              className="mt-4 px-8 py-3 border border-primary text-primary text-sm tracking-widest uppercase rounded-full hover:bg-primary hover:text-blue-gray transition-all cursor-pointer"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: navLinks.length * 0.07 }}

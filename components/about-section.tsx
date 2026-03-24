@@ -4,10 +4,10 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const stats = [
-  { value: '15+', label: 'Years of Excellence' },
-  { value: '2,400+', label: 'Events Delivered' },
-  { value: '98%', label: 'Client Satisfaction' },
-  { value: '35', label: 'Expert Team Members' },
+  { value: '12+', label: 'Years of Service' },
+  { value: '500+', label: 'Companies Served' },
+  { value: '97%', label: 'Client Satisfaction' },
+  { value: '50+', label: 'Catering Staff' },
 ]
 
 export default function AboutSection() {
@@ -42,7 +42,7 @@ export default function AboutSection() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              <p className="font-serif text-5xl text-gold font-light leading-none mb-1">
+              <p className="font-serif text-5xl text-primary font-light leading-none mb-1">
                 15<span className="text-2xl">+</span>
               </p>
               <p className="text-xs tracking-widest uppercase text-muted-foreground font-sans">
@@ -50,7 +50,7 @@ export default function AboutSection() {
               </p>
             </motion.div>
             {/* Gold decorative border */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-gold rounded-tl-2xl pointer-events-none" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-primary rounded-tl-2xl pointer-events-none" />
           </motion.div>
 
           {/* Right – text */}
@@ -59,29 +59,30 @@ export default function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
           >
-            <p className="text-gold text-xs tracking-[0.35em] uppercase font-sans font-medium mb-5">
-              Our Story
+            <p className="text-primary text-xs tracking-[0.35em] uppercase font-sans font-medium mb-5">
+              About Us
             </p>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground font-light text-balance leading-tight mb-8">
-              Passion on Every{' '}
-              <span className="italic text-gold">Plate</span>
+              Reliable Service,{' '}
+              <span className="italic text-primary">Every Meal</span>
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed text-pretty">
               <p>
-                Founded with a deep love for food and hospitality, The Caterers
-                has grown into one of the most trusted names in luxury event
-                catering. We believe that food is the heart of every
-                celebration — a language spoken by all.
+                With over a decade of experience, Corporate Meals is Vietnam's
+                leading provider of industrial catering solutions. We specialize in
+                large-scale meal delivery for companies, factories, and corporate
+                events across the country.
               </p>
               <p>
-                Our team of passionate chefs and event specialists work closely
-                with each client to design menus that reflect their story,
-                vision, and taste. No two events are alike, and we cherish that.
+                Our professional team combines food safety expertise, reliable
+                logistics, and quality standards to ensure every meal meets your
+                expectations. We understand the unique demands of corporate catering
+                and deliver consistently, every single day.
               </p>
               <p>
-                From seasonal ingredients sourced from local farms to bespoke
-                table settings that dazzle, every detail is considered with care
-                and intention.
+                From employee canteens to conference catering to on-site industrial
+                dining, we provide nutritious, varied menus adapted to your team's
+                needs and dietary requirements.
               </p>
             </div>
 
@@ -91,9 +92,9 @@ export default function AboutSection() {
                   const el = document.querySelector('#cta')
                   if (el) el.scrollIntoView({ behavior: 'smooth' })
                 }}
-                className="px-8 py-3.5 bg-foreground text-primary-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:bg-gold hover:text-charcoal transition-all duration-300 cursor-pointer"
+                className="px-8 py-3.5 bg-foreground text-primary-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary hover:text-blue-gray transition-all duration-300 cursor-pointer"
               >
-                Work With Us
+                Get In Touch
               </button>
               <button
                 onClick={() => {

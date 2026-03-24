@@ -8,19 +8,19 @@ export default function CtaSection() {
   const inView = useInView(ref, { once: true })
 
   return (
-    <section id="cta" className="relative py-32 px-6 overflow-hidden bg-cream">
-      {/* Decorative gold lines */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gold/40" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gold/40" />
+    <section id="cta" className="relative py-32 px-6 overflow-hidden bg-blue-white">
+      {/* Decorative primary lines */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-primary/40" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-primary/40" />
 
       <div className="max-w-4xl mx-auto text-center" ref={ref}>
         <motion.p
-          className="text-gold text-xs tracking-[0.35em] uppercase font-sans font-medium mb-6"
+          className="text-primary text-xs tracking-[0.35em] uppercase font-sans font-medium mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Let&apos;s Create Together
+          Ready to Elevate Your Corporate Meals?
         </motion.p>
 
         <motion.h2
@@ -29,8 +29,8 @@ export default function CtaSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Your Perfect Event{' '}
-          <span className="italic text-gold">Starts Here</span>
+          Get Your Custom{' '}
+          <span className="italic text-primary">Quote Today</span>
         </motion.h2>
 
         <motion.p
@@ -39,9 +39,9 @@ export default function CtaSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Tell us about your vision and we&apos;ll bring it to life with
-          culinary artistry and flawless hospitality. We&apos;d love to hear
-          from you.
+          Contact us now for employee cafeteria solutions, conference catering, or
+          large-scale industrial meal delivery. We'll work with you to design the
+          perfect plan for your business.
         </motion.p>
 
         <motion.div
@@ -51,16 +51,16 @@ export default function CtaSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <a
-            href="mailto:hello@thecaterers.co"
-            className="inline-block px-12 py-4 bg-foreground text-primary-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:bg-gold hover:text-charcoal transition-all duration-300 cursor-pointer shadow-lg hover:scale-105"
+            href="mailto:sales@corporatemals.com"
+            className="inline-block px-12 py-4 bg-foreground text-primary-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary hover:text-blue-gray transition-all duration-300 cursor-pointer shadow-lg hover:scale-105"
           >
-            Get in Touch
+            Email Us
           </a>
           <a
-            href="tel:+1800000000"
-            className="inline-block px-12 py-4 border border-foreground text-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:border-gold hover:text-gold transition-all duration-300 cursor-pointer hover:scale-105"
+            href="tel:+84912345678"
+            className="inline-block px-12 py-4 border border-foreground text-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105"
           >
-            Call Us
+            Call Now
           </a>
         </motion.div>
 
@@ -73,7 +73,7 @@ export default function CtaSection() {
         >
           <div className="h-px flex-1 max-w-24 bg-border" />
           <span className="font-serif text-xl italic text-muted-foreground">
-            The Caterers
+            Corporate Meals
           </span>
           <div className="h-px flex-1 max-w-24 bg-border" />
         </motion.div>

@@ -7,26 +7,26 @@ import { Plus } from 'lucide-react'
 const galleryItems = [
   {
     src: '/images/gallery-1.jpg',
-    alt: 'Outdoor wedding garden ceremony with catering',
-    category: 'Weddings',
+    alt: 'Corporate event catering setup',
+    category: 'Corporate Events',
     span: 'row-span-2',
   },
   {
     src: '/images/gallery-2.jpg',
-    alt: 'Gourmet canapés and appetizers presentation',
-    category: 'Fine Dining',
+    alt: 'Employee meal preparation and service',
+    category: 'Employee Dining',
     span: '',
   },
   {
     src: '/images/gallery-3.jpg',
-    alt: 'Gala black tie dinner event',
-    category: 'Galas',
+    alt: 'Large scale industrial catering',
+    category: 'Industrial Catering',
     span: '',
   },
   {
     src: '/images/gallery-4.jpg',
-    alt: 'Luxury dessert table with cakes and florals',
-    category: 'Celebrations',
+    alt: 'Conference meal service',
+    category: 'Conferences',
     span: '',
   },
 ]
@@ -56,8 +56,8 @@ function GalleryItem({
         style={{ minHeight: item.span ? '28rem' : '16rem' }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center gap-3">
-        <span className="text-gold text-xs tracking-[0.3em] uppercase font-sans">
+      <div className="absolute inset-0 bg-blue-gray/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center gap-3">
+        <span className="text-primary text-xs tracking-[0.3em] uppercase font-sans">
           {item.category}
         </span>
         <div className="w-10 h-10 rounded-full border border-white/60 flex items-center justify-center text-white">
@@ -73,7 +73,7 @@ export default function PortfolioSection() {
   const titleInView = useInView(titleRef, { once: true })
 
   return (
-    <section id="portfolio" className="py-28 px-6 bg-cream">
+    <section id="portfolio" className="py-28 px-6 bg-blue-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -84,17 +84,17 @@ export default function PortfolioSection() {
           transition={{ duration: 0.7 }}
         >
           <div>
-            <p className="text-gold text-xs tracking-[0.35em] uppercase font-sans font-medium mb-4">
-              Our Portfolio
+            <p className="text-primary text-xs tracking-[0.35em] uppercase font-sans font-medium mb-4">
+              Our Work
             </p>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light text-balance leading-tight">
-              Moments We&apos;ve{' '}
-              <span className="italic text-gold">Crafted</span>
+              Projects We&apos;ve{' '}
+              <span className="italic text-primary">Served</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-xs leading-relaxed text-sm text-pretty md:text-right">
-            A glimpse into the unforgettable experiences we&apos;ve had the
-            privilege to create.
+            A showcase of the companies and events we proudly serve with
+            professional catering solutions.
           </p>
         </motion.div>
 

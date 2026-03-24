@@ -1,32 +1,32 @@
 const footerLinks = {
-  Services: ['Wedding Catering', 'Corporate Events', 'Private Dining', 'Cocktail Receptions', 'Holiday Parties'],
-  Company: ['About Us', 'Our Team', 'Portfolio', 'Blog', 'Press'],
-  Contact: ['hello@thecaterers.co', '+1 (800) 000-0000', '12 Avenue du Luxe, Paris', 'Mon–Fri, 9am–6pm'],
+  Services: ['Employee Dining', 'Corporate Events', 'Industrial Catering', 'Conference Meals', 'On-Site Catering'],
+  Company: ['About Us', 'Our Team', 'Portfolio', 'Sustainability', 'Careers'],
+  Contact: ['sales@corporatemeals.com', '+84 (912) 345-678', 'Ho Chi Minh City, Vietnam', 'Mon–Fri, 8am–6pm'],
 }
 
 const socials = ['Instagram', 'Facebook', 'LinkedIn', 'Pinterest']
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-white/60 font-sans">
+    <footer className="bg-blue-gray text-white/60 font-sans">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Top */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-20 border-b border-white/10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <p className="font-serif text-2xl text-white font-semibold tracking-widest uppercase mb-4">
-              The <span className="text-gold italic font-light">Caterers</span>
+              Corporate <span className="text-primary italic font-light">Meals</span>
             </p>
             <p className="text-sm leading-relaxed max-w-xs text-pretty">
-              Crafting extraordinary culinary experiences for life&apos;s most
-              cherished moments since 2009.
+              Professional catering solutions for businesses across Vietnam.
+              Reliable, quality meals every day since 2012.
             </p>
             <div className="flex gap-4 mt-8">
               {socials.map((s) => (
                 <a
                   key={s}
                   href="#"
-                  className="text-xs tracking-wider uppercase hover:text-gold transition-colors"
+                  className="text-xs tracking-wider uppercase hover:text-primary transition-colors"
                   aria-label={s}
                 >
                   {s.slice(0, 2)}
@@ -46,7 +46,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm hover:text-gold transition-colors leading-relaxed"
+                      className="text-sm hover:text-primary transition-colors leading-relaxed"
                     >
                       {link}
                     </a>
@@ -59,11 +59,11 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 text-xs">
-          <p>&copy; {new Date().getFullYear()} The Caterers. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Corporate Meals. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-gold transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>

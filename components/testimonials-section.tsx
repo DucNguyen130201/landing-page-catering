@@ -8,31 +8,31 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 const testimonials = [
   {
     quote:
-      'The Caterers turned our wedding reception into a culinary masterpiece. Every guest was still talking about the food weeks later. Truly exceptional service from start to finish.',
-    author: 'Sophia & James Laurent',
-    role: 'Wedding Clients — Château des Lumières',
-    initials: 'SJ',
+      'Corporate Meals handles our employee cafeteria daily. The variety, quality, and reliability are unmatched. Our team looks forward to lunch now!',
+    author: 'Tran Van A',
+    role: 'HR Manager, Tech Corp Vietnam',
+    initials: 'TV',
   },
   {
     quote:
-      "We've hosted our annual gala with The Caterers for three consecutive years. Their attention to detail, seasonal menus, and flawless execution make them irreplaceable partners.",
-    author: 'Marcus Chen',
-    role: 'CEO, Luminary Group',
-    initials: 'MC',
+      "We've relied on Corporate Meals for conference catering for two years running. They scale beautifully and maintain quality across 200+ meals. Highly professional.",
+    author: 'Nguyen Thi B',
+    role: 'Event Coordinator, Global Partners',
+    initials: 'NB',
   },
   {
     quote:
-      'From the first tasting to the final dessert, everything was perfect. The team was professional, warm, and incredibly talented. Our guests were absolutely delighted.',
-    author: 'Isabella Fontaine',
-    role: 'Private Dining Client',
-    initials: 'IF',
+      'Catering for our factory complex required someone dependable. Corporate Meals delivers every single day, on time. Best value for large-scale dining we've found.',
+    author: 'Pham Duc C',
+    role: 'Operations Manager, Manufacturing Corp',
+    initials: 'PD',
   },
   {
     quote:
-      'We hosted a product launch dinner for 120 guests and the feedback was unanimous — the finest catering experience anyone had encountered. Impeccable presentation and flavour.',
-    author: 'Olivier Beaumont',
-    role: 'Head of Events, Maison Éclat',
-    initials: 'OB',
+      'From our corporate retreat to weekly team lunches, they handle everything seamlessly. Food quality is excellent and pricing is fair. Highly recommended!',
+    author: 'Do Minh D',
+    role: 'Business Development Lead, Startup Hub',
+    initials: 'DM',
   },
 ]
 
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
   const titleInView = useInView(titleRef, { once: true })
 
   return (
-    <section id="testimonials" className="py-28 px-6 bg-charcoal overflow-hidden">
+    <section id="testimonials" className="py-28 px-6 bg-blue-gray overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -55,12 +55,12 @@ export default function TestimonialsSection() {
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-gold text-xs tracking-[0.35em] uppercase font-sans font-medium mb-4">
-            Kind Words
+          <p className="text-primary text-xs tracking-[0.35em] uppercase font-sans font-medium mb-4">
+            Client Testimonials
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-light text-balance leading-tight">
-            What Our Clients{' '}
-            <span className="italic text-gold">Say</span>
+            Trusted by Companies{' '}
+            <span className="italic text-primary">Nationwide</span>
           </h2>
         </motion.div>
 
