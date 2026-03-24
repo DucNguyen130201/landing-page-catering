@@ -1,45 +1,51 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { Plus } from 'lucide-react'
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Plus } from "lucide-react";
 
 const galleryItems = [
   {
-    src: '/images/gallery-1.jpg',
-    alt: 'Corporate event catering setup',
-    category: 'Corporate Events',
-    span: 'row-span-2',
+    src: "/images/gallery-5.jpg",
+    alt: "Corporate event catering setup",
+    category: "Corporate Events",
+    span: "row-span-2",
   },
   {
-    src: '/images/gallery-2.jpg',
-    alt: 'Employee meal preparation and service',
-    category: 'Employee Dining',
-    span: '',
+    src: "/images/gallery-6.jpg",
+    alt: "Employee meal preparation and service",
+    category: "Employee Dining",
+    span: "",
   },
   {
-    src: '/images/gallery-3.jpg',
-    alt: 'Large scale industrial catering',
-    category: 'Industrial Catering',
-    span: '',
+    src: "/images/gallery-7.jpg",
+    alt: "Large scale industrial catering",
+    category: "Industrial Catering",
+    span: "",
   },
   {
-    src: '/images/gallery-4.jpg',
-    alt: 'Conference meal service',
-    category: 'Conferences',
-    span: '',
+    src: "/images/gallery-8.jpg",
+    alt: "Conference meal service",
+    category: "Conferences",
+    span: "",
   },
-]
+  {
+    src: "/images/gallery-9.jpg",
+    alt: "Conference meal service",
+    category: "Conferences",
+    span: "",
+  },
+];
 
 function GalleryItem({
   item,
   index,
 }: {
-  item: (typeof galleryItems)[0]
-  index: number
+  item: (typeof galleryItems)[0];
+  index: number;
 }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
     <motion.div
@@ -53,7 +59,7 @@ function GalleryItem({
         src={item.src}
         alt={item.alt}
         className="w-full h-full object-cover object-center min-h-64 transition-transform duration-700 group-hover:scale-108"
-        style={{ minHeight: item.span ? '28rem' : '16rem' }}
+        style={{ minHeight: item.span ? "28rem" : "16rem" }}
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-blue-gray/60 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center gap-3">
@@ -65,12 +71,12 @@ function GalleryItem({
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default function PortfolioSection() {
-  const titleRef = useRef(null)
-  const titleInView = useInView(titleRef, { once: true })
+  const titleRef = useRef(null);
+  const titleInView = useInView(titleRef, { once: true });
 
   return (
     <section id="portfolio" className="py-28 px-6 bg-blue-white">
@@ -88,7 +94,7 @@ export default function PortfolioSection() {
               Our Work
             </p>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light text-balance leading-tight">
-              Projects We&apos;ve{' '}
+              Projects We&apos;ve{" "}
               <span className="italic text-primary">Served</span>
             </h2>
           </div>
@@ -106,5 +112,5 @@ export default function PortfolioSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
