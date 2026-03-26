@@ -42,7 +42,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
           {/* Logo */}
-          {/* <a
+          <img
+          src="/images/logo.jpg"
+          alt="Logo Catering"
+          className="h-16 object-cover object-center"
+          />
+          <a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${
@@ -51,12 +56,7 @@ export default function Navbar() {
           >
             Corporate <span className="text-primary italic font-light">Meals</span>
           </a>
-          <img
-          src="/images/logo.jpg"
-          alt="Logo Catering"
-          className="w-full h-full object-cover object-center"
-          /> */}
-          <a
+          {/* <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
@@ -69,7 +69,7 @@ export default function Navbar() {
               alt="Corporate Meals Logo"
               className="h-10 w-auto object-contain"
             />
-          </a>
+          </a> */}
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
