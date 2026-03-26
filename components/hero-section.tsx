@@ -29,7 +29,7 @@ export default function HeroSection() {
         style={{ y: bgY }}
       >
         <img
-          src="/images/hero-bg-4.jpg"
+          src="/images/hero-bg-6.jpg"
           alt="Luxury catering event"
           className="w-full h-full object-cover object-center"
         />
