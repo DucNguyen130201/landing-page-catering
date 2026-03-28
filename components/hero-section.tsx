@@ -35,12 +35,7 @@ export default function HeroSection() {
         />
         {/* Dark overlay */}
         <div
-          className="absolute inset-0 
-        bg-charcoal/55
-        opacity-50
-        backdrop-blur-lg
-        backdrop-brightness-20
-        "
+          className="absolute inset-0 bg-black/45 backdrop-blur-sm"
         />
       </motion.div>
 
@@ -50,7 +45,7 @@ export default function HeroSection() {
         style={{ y: textY, opacity }}
       >
         <motion.p
-          className="text-primary text-sm tracking-[0.35em] uppercase font-sans font-medium mb-6"
+          className="text-accent text-sm tracking-[0.35em] uppercase font-sans font-semibold mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -90,7 +85,7 @@ export default function HeroSection() {
               const el = document.querySelector("#cta");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-10 py-4 bg-primary text-blue-gray text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary/80 hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-primary/30 hover:scale-105"
+            className="px-10 py-4 bg-primary text-foreground text-sm tracking-widest uppercase font-semibold rounded-full hover:bg-accent hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-primary/40 hover:scale-105"
           >
             Get A Quote
           </button>
@@ -99,7 +94,7 @@ export default function HeroSection() {
               const el = document.querySelector("#portfolio");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-10 py-4 border border-white/60 text-white text-sm tracking-widest uppercase font-medium rounded-full hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105"
+            className="px-10 py-4 border-2 border-primary text-primary text-sm tracking-widest uppercase font-semibold rounded-full hover:bg-primary hover:text-foreground transition-all duration-300 cursor-pointer hover:scale-105"
           >
             View Services
           </button>
