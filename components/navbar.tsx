@@ -42,15 +42,37 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
           {/* Logo */}
-          <a
+          <div>
+            <img
+            src="/images/logo-removebg-preview.png"
+            alt="Logo Catering"
+            className="h-18 object-cover object-center"
+            />
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+              className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${
+                scrolled ? 'text-foreground' : 'text-white'
+              }`}
+            >
+              <div>CÔNG TY TNHH <span className="text-primary italic font-light">KỲ THƯ</span></div>
+              <div>Hẻm 36, DT 786, Tổ 17, Thanh Thuận, Phường Thanh Điền, Tỉnh Tây Ninh, Việt Nam</div>
+            </a>
+          </div>
+          {/* <a
             href="#"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-            className={`font-serif text-2xl font-semibold tracking-widest transition-colors duration-300 ${
-              scrolled ? 'text-foreground' : 'text-white'
-            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="flex items-center transition-opacity duration-300 hover:opacity-80"
           >
-            Corporate <span className="text-primary italic font-light">Meals</span>
-          </a>
+            <img
+              src="/images/logo.jpg"
+              alt="Corporate Meals Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </a> */}
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">

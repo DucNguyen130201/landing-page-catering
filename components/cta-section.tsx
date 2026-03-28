@@ -1,14 +1,17 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function CtaSection() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
-    <section id="cta" className="relative py-32 px-6 overflow-hidden bg-blue-white">
+    <section
+      id="cta"
+      className="relative py-32 px-6 overflow-hidden bg-blue-white"
+    >
       {/* Decorative primary lines */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-primary/40" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-primary/40" />
@@ -29,7 +32,7 @@ export default function CtaSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Get Your Custom{' '}
+          Get Your Custom{" "}
           <span className="italic text-primary">Quote Today</span>
         </motion.h2>
 
@@ -39,9 +42,9 @@ export default function CtaSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Contact us now for employee cafeteria solutions, conference catering, or
-          large-scale industrial meal delivery. We'll work with you to design the
-          perfect plan for your business.
+          Contact us now for employee cafeteria solutions, conference catering,
+          or large-scale industrial meal delivery. We'll work with you to design
+          the perfect plan for your business.
         </motion.p>
 
         <motion.div
@@ -52,7 +55,7 @@ export default function CtaSection() {
         >
           <a
             href="mailto:sales@corporatemals.com"
-            className="inline-block px-12 py-4 bg-foreground text-primary-foreground text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary hover:text-blue-gray transition-all duration-300 cursor-pointer shadow-lg hover:scale-105"
+            className="inline-block px-12 py-4 bg-foreground text-white text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary hover:text-blue-gray transition-all duration-300 cursor-pointer shadow-lg hover:scale-105"
           >
             Email Us
           </a>
@@ -79,5 +82,5 @@ export default function CtaSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

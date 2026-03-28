@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 // useScroll without a target reads window scroll — no position requirement
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll()
-  const bgY = useTransform(scrollY, [0, 600], ['0%', '30%'])
-  const textY = useTransform(scrollY, [0, 600], ['0%', '15%'])
-  const opacity = useTransform(scrollY, [0, 480], [1, 0])
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], ["0%", "30%"]);
+  const textY = useTransform(scrollY, [0, 600], ["0%", "15%"]);
+  const opacity = useTransform(scrollY, [0, 480], [1, 0]);
 
   const handleScroll = () => {
-    const el = document.querySelector('#services')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
+    const el = document.querySelector("#services");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -29,12 +29,19 @@ export default function HeroSection() {
         style={{ y: bgY }}
       >
         <img
-          src="/images/hero-bg.jpg"
+          src="/images/hero-bg-6.jpg"
           alt="Luxury catering event"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-charcoal/55" />
+        <div
+          className="absolute inset-0 
+        bg-charcoal/55
+        opacity-50
+        backdrop-blur-lg
+        backdrop-brightness-20
+        "
+        />
       </motion.div>
 
       {/* Content */}
@@ -57,7 +64,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
         >
-          Quality Meals for{' '}
+          Quality Meals for{" "}
           <span className="italic text-primary">Corporate Teams</span>
         </motion.h1>
 
@@ -67,8 +74,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
         >
-          Professional catering solutions for companies across Vietnam. We provide reliable,
-          nutritious meals for employee dining, corporate events, and conference catering.
+          Professional catering solutions for companies across Vietnam. We
+          provide reliable, nutritious meals for employee dining, corporate
+          events, and conference catering.
         </motion.p>
 
         <motion.div
@@ -79,8 +87,8 @@ export default function HeroSection() {
         >
           <button
             onClick={() => {
-              const el = document.querySelector('#cta')
-              if (el) el.scrollIntoView({ behavior: 'smooth' })
+              const el = document.querySelector("#cta");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
             className="px-10 py-4 bg-primary text-blue-gray text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary/80 hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-primary/30 hover:scale-105"
           >
@@ -88,8 +96,8 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => {
-              const el = document.querySelector('#portfolio')
-              if (el) el.scrollIntoView({ behavior: 'smooth' })
+              const el = document.querySelector("#portfolio");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
             className="px-10 py-4 border border-white/60 text-white text-sm tracking-widest uppercase font-medium rounded-full hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105"
           >
@@ -107,14 +115,16 @@ export default function HeroSection() {
         transition={{ delay: 1.4, duration: 0.6 }}
         aria-label="Scroll down"
       >
-        <span className="text-xs tracking-widest uppercase font-sans">Discover</span>
+        <span className="text-xs tracking-widest uppercase font-sans">
+          Discover
+        </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
         >
           <ChevronDown size={20} />
         </motion.div>
       </motion.button>
     </section>
-  )
+  );
 }
