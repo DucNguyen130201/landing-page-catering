@@ -51,7 +51,7 @@ export default function HeroSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <motion.p
-            className="text-accent text-sm tracking-[0.35em] uppercase font-sans font-semibold mb-6"
+            className="text-[#6de2ff] text-sm tracking-[0.35em] uppercase font-sans font-semibold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
