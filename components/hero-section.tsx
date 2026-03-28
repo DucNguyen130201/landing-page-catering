@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-// useScroll without a target reads window scroll — no position requirement
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, CheckCircle2 } from "lucide-react";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,11 +16,18 @@ export default function HeroSection() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const features = [
+    "Dịch vụ cung cấp suất ăn công nghiệp",
+    "Phục vụ Tây Ninh, Long An, Bình Dương",
+    "Chuyên nghiệp, cam kết chất lượng",
+    "Đầy đủ giấy phép, an toàn thực phẩm"
+  ];
+
   return (
     <section
       ref={containerRef}
       id="hero"
-      className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12"
     >
       {/* Parallax background */}
       <motion.div
@@ -30,78 +36,83 @@ export default function HeroSection() {
       >
         <img
           src="/images/hero-bg-6.jpg"
-          alt="Luxury catering event"
+          alt="Dịch vụ cung cấp suất ăn công nghiệp"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay */}
-        <div
-          className="absolute inset-0 
-        bg-charcoal/55
-        opacity-50
-        backdrop-blur-lg
-        backdrop-brightness-20
-        "
-        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       </motion.div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-10 px-6 max-w-4xl mx-auto w-full"
         style={{ y: textY, opacity }}
       >
-        <motion.p
-          className="text-primary text-sm tracking-[0.35em] uppercase font-sans font-medium mb-6"
+        {/* Header */}
+        <div className="text-center mb-12">
+          <motion.p
+            className="text-[#6de2ff] text-sm tracking-[0.35em] uppercase font-sans font-semibold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Nhà Cung Cấp Suất Ăn Công Nghiệp
+          </motion.p>
+
+          <motion.h1
+            className="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-light leading-tight text-balance mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.4 }}
+          >
+            Chất Lượng <span className="text-primary">Tuyệt Vời</span>, Giá Hợp Lý
+          </motion.h1>
+        </div>
+
+        {/* Features Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          Professional Industrial Catering
-        </motion.p>
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="flex items-start gap-3 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-colors"
+            >
+              <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+              <p className="text-white/90 text-sm md:text-base font-sans font-light">
+                {feature}
+              </p>
+            </div>
+          ))}
+        </motion.div>
 
-        <motion.h1
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-light leading-tight text-balance mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5 }}
-        >
-          Quality Meals for{" "}
-          <span className="italic text-primary">Corporate Teams</span>
-        </motion.h1>
-
-        <motion.p
-          className="text-white/75 text-lg md:text-xl font-sans font-light leading-relaxed max-w-2xl mx-auto mb-12 text-pretty"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
-          Professional catering solutions for companies across Vietnam. We
-          provide reliable, nutritious meals for employee dining, corporate
-          events, and conference catering.
-        </motion.p>
-
+        {/* CTA Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <button
             onClick={() => {
               const el = document.querySelector("#cta");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-10 py-4 bg-primary text-blue-gray text-sm tracking-widest uppercase font-medium rounded-full hover:bg-primary/80 hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-primary/30 hover:scale-105"
+            className="px-10 py-4 bg-primary text-foreground text-sm tracking-widest uppercase font-semibold rounded-full hover:bg-accent hover:text-white transition-all duration-300 cursor-pointer shadow-lg hover:shadow-primary/40 hover:scale-105"
           >
-            Get A Quote
+            Nhận Báo Giá
           </button>
           <button
             onClick={() => {
               const el = document.querySelector("#portfolio");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="px-10 py-4 border border-white/60 text-white text-sm tracking-widest uppercase font-medium rounded-full hover:border-primary hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105"
+            className="px-10 py-4 border-2 border-primary text-primary text-sm tracking-widest uppercase font-semibold rounded-full hover:bg-primary hover:text-foreground transition-all duration-300 cursor-pointer hover:scale-105"
           >
-            View Services
+            Xem Dịch Vụ
           </button>
         </motion.div>
       </motion.div>
@@ -112,11 +123,11 @@ export default function HeroSection() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/60 hover:text-primary transition-colors cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
-        aria-label="Scroll down"
+        transition={{ delay: 1.2, duration: 0.6 }}
+        aria-label="Cuộn xuống"
       >
         <span className="text-xs tracking-widest uppercase font-sans">
-          Discover
+          Khám Phá
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
