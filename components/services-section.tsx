@@ -1,50 +1,50 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    title: 'Employee Dining',
+    title: "Món nước (Phở, bún,...)",
     description:
-      'Daily meal solutions for company canteens and employee cafeterias. Nutritious, varied, and cost-effective options.',
-    image: '/images/service-wedding.jpg',
-    tag: '01',
+      "Daily meal solutions for company canteens and employee cafeterias. Nutritious, varied, and cost-effective options.",
+    image: "/images/service-wedding-2.jpg",
+    tag: "01",
   },
   {
-    title: 'Corporate Events',
+    title: "Suất ăn công nhân (Cơm, canh, món mặn,...)",
     description:
-      'Conference catering, team lunches, seminars, and corporate functions. Professional service and large-scale meal delivery.',
-    image: '/images/service-corporate.jpg',
-    tag: '02',
+      "Conference catering, team lunches, seminars, and corporate functions. Professional service and large-scale meal delivery.",
+    image: "/images/service-corporate-3.jpg",
+    tag: "02",
   },
   {
-    title: 'Industrial Catering',
+    title: "Cơm văn phòng",
     description:
-      'On-site meal provision for construction sites, factories, and large work operations. Reliable delivery and quality assurance.',
-    image: '/images/service-private.jpg',
-    tag: '03',
+      "On-site meal provision for construction sites, factories, and large work operations. Reliable delivery and quality assurance.",
+    image: "/images/service-private-2.jpg",
+    tag: "03",
   },
-]
+];
 
 function ServiceCard({
   service,
   index,
 }: {
-  service: (typeof services)[0]
-  index: number
+  service: (typeof services)[0];
+  index: number;
 }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
     <motion.article
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
+      transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
       className="group relative rounded-2xl overflow-hidden bg-card shadow-md hover:shadow-xl transition-shadow duration-500 cursor-pointer"
     >
       {/* Image */}
@@ -76,12 +76,12 @@ function ServiceCard({
         <div className="mt-6 h-px bg-border w-0 group-hover:w-full transition-all duration-500" />
       </div>
     </motion.article>
-  )
+  );
 }
 
 export default function ServicesSection() {
-  const titleRef = useRef(null)
-  const titleInView = useInView(titleRef, { once: true })
+  const titleRef = useRef(null);
+  const titleInView = useInView(titleRef, { once: true });
 
   return (
     <section id="services" className="py-28 px-6 bg-background">
@@ -98,12 +98,12 @@ export default function ServicesSection() {
             Our Services
           </p>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light text-balance leading-tight">
-            Solutions for Every{' '}
+            Solutions for Every{" "}
             <span className="italic text-primary">Business</span>
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto leading-relaxed text-pretty">
-            From daily employee meals to large-scale industrial catering, we deliver quality,
-            reliability, and professional service at scale.
+            From daily employee meals to large-scale industrial catering, we
+            deliver quality, reliability, and professional service at scale.
           </p>
         </motion.div>
 
@@ -115,5 +115,5 @@ export default function ServicesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
